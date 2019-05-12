@@ -5,13 +5,10 @@ require 'pry'
 require 'benchmark'
 require 'fileutils'
 
-jsdelivr = Pod::CDNSource.new('bench_repos/jsdelivr')
-github = Pod::CDNSource.new('bench_repos/github')
+sources = all_sources
+sample_pods = sources.first.pods.sample(10).sort
 
-sample_pods = jsdelivr.pods.sample(10).sort
-
-FileUtils.rm_rf(jsdelivr.specs_dir)
-measure(jsdelivr, sample_pods)
-
-FileUtils.rm_rf(github.specs_dir)
-measure(github, sample_pods)
+all_sources.each do |source|
+  FileUtils.rm_rf(source.specs_dir)
+  measure(source, sample_pods)
+end

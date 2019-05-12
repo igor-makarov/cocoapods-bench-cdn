@@ -36,4 +36,9 @@ def measure(source, pods)
   end
   STDERR.puts "#{source.name} #{time.real / pods.length} (#{pods.length} pods)"
 end
-  
+
+def all_sources 
+  Dir['bench_repos/*'].map do |repo|
+    Pod::CDNSource.new(repo)
+  end
+end
