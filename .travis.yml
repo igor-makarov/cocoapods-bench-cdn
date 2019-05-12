@@ -1,0 +1,12 @@
+language: ruby
+bundler_args: --without debugging documentation
+rvm:
+  - 2.6.2
+env:
+  - LANG="en_US.UTF-8"
+script: 
+  - bundle exec ruby bench-random.rb
+  - bundle exec ruby bench-random.rb
+
+before_install:
+  - gem install bundler -v "~> 1.17"

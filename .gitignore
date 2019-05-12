@@ -1,0 +1,4 @@
+Gemfile.lock
+bench_repos/**/Specs
+bench_repos/*/*.yml*
+bench_repos/*/*.txt*
