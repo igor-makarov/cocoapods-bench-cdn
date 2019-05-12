@@ -1,3 +1,4 @@
+require 'cocoapods'
 require 'cocoapods-core'
 require 'pry'
 require 'benchmark'
