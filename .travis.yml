@@ -3,10 +3,13 @@ bundler_args: --without debugging documentation
 rvm:
   - 2.6.2
 env:
-  - MAX_THREADS=20 LANG="en_US.UTF-8"
-  - MAX_THREADS=50 LANG="en_US.UTF-8"
-  - MAX_THREADS=100 LANG="en_US.UTF-8"
-  - MAX_THREADS=500 LANG="en_US.UTF-8"
+  global:
+    - LANG="en_US.UTF-8"
+  matrix: 
+    - MAX_THREADS=20 
+    - MAX_THREADS=30
+    - MAX_THREADS=50
+    - MAX_THREADS=100
  
 script: 
   - bundle exec ruby bench-random.rb
