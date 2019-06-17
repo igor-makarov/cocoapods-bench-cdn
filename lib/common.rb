@@ -15,6 +15,13 @@ def measure(source, pods)
   STDERR.puts "#{source.name} #{time.real / pods.length} (#{pods.length} pods)"
 end
 
+def measure_update(source, pods)
+  time = Benchmark.measure do
+    source.update(nil)
+  end
+  STDERR.puts "#{source.name} #{time.real} total (#{pods.length} pods)"
+end
+
 def all_sources
   Dir['bench_repos/*'].map do |repo|
     Pod::CDNSource.new(repo)
