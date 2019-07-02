@@ -13,7 +13,7 @@ env:
  
 script: 
   - bundle exec ruby bench-random.rb
-  - bundle exec ruby bench-update.rb
+  - while bundle exec ruby bench-update.rb ; do :; done
 
 before_install:
   - gem install bundler -v "~> 1.17"
