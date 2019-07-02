@@ -6,10 +6,10 @@ env:
   global:
     - LANG="en_US.UTF-8"
   matrix: 
-    - MAX_THREADS=20 
-    - MAX_THREADS=30
+    # - MAX_THREADS=20 
+    # - MAX_THREADS=30
     - MAX_THREADS=50
-    - MAX_THREADS=100
+    # - MAX_THREADS=100
  
 script: 
   - bundle exec ruby bench-random.rb
