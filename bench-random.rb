@@ -6,7 +6,7 @@ require 'benchmark'
 require 'fileutils'
 
 sources = all_sources
-sample_pods = sources.first.pods.sample(200).sort
+sample_pods = sources.first.pods.sample(201).sort
 
 all_sources.each do |source|
   FileUtils.rm_rf(source.specs_dir)
