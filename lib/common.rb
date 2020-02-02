@@ -9,6 +9,7 @@ require 'fileutils'
 def measure(source, pods)
   time = Benchmark.measure do
     pods.each do |pod|
+      STDERR.puts pod
       source.versions(pod)
     end
   end
