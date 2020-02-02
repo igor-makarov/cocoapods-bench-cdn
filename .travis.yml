@@ -7,13 +7,14 @@ env:
     - LANG="en_US.UTF-8"
   matrix: 
     - MAX_THREADS=20 
-    - MAX_THREADS=30
-    - MAX_THREADS=50
-    - MAX_THREADS=100
+    # - MAX_THREADS=30
+    # - MAX_THREADS=50
+    # - MAX_THREADS=100
  
 script: 
-  - bundle exec ruby bench-random.rb
-  - bundle exec ruby bench-update.rb
+  # - bundle exec ruby bench-random.rb
+  # - bundle exec ruby bench-update.rb
+  - bundle exec ruby bench-shards.rb
 
 before_install:
   - gem install bundler -v "~> 1.17"
