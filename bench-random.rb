@@ -14,5 +14,5 @@ sample_pods = sources.first.pods.group_by { |pod|
 
 all_sources.each do |source|
   FileUtils.rm_rf(source.specs_dir)
-  measure(source, sample_pods)
+  measure(source, sample_pods.shuffle)
 end
