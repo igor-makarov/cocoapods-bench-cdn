@@ -1,5 +1,8 @@
 language: ruby
 bundler_args: --without debugging documentation
+os: 
+  - osx
+  - linux
 rvm:
   - 2.6.2
   - 2.7.1
