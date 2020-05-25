@@ -23,7 +23,7 @@ loop do
   counters = {}
 
   time = Benchmark.measure do
-    urls = #['/all_pods.txt'] + 
+    urls = ['/all_pods.txt'] + 
       triples.shuffle.map { |t| "/all_pods_versions_#{t.join('_')}.txt"}
     urls.each do |url|
       request = request(url)
